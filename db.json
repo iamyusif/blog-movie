@@ -1,0 +1,102 @@
+{
+    "users": [
+        {
+            "id": 1,
+            "username": "admin",
+            "name": "admin",
+            "email": "admin@admin.com",
+            "password": "123",
+            "role": "admin"
+        },
+        {
+            "id": 2,
+            "username": "test2",
+            "name": "test2",
+            "email": "tes2t@tes2t.te2st",
+            "password": "123",
+            "role": "user"
+        },
+        {
+            "id": 3,
+            "username": "test3",
+            "name": "test3",
+            "email": "tes3t@tes3t.te3st",
+            "password": "123",
+            "role": "user"
+        },
+        {
+            "id": 4,
+            "name": "yox",
+            "email": "iamyusifhh@gmail.com",
+            "username": "admin",
+            "password": "123",
+            "role": "user"
+        },
+        {
+            "id": 5,
+            "name": "yusif",
+            "email": "iamyusifh@gmail.com",
+            "username": "sad",
+            "password": "123",
+            "role": "user"
+        }
+    ],
+    "movies": [
+        {
+            "id": 1,
+            "title": "Ring of Powers",
+            "description": "The Ring of Power is a 1992 documentary film written and directed by Amenstop Productions. It is the first part of a two-part series detailing the use of occultic practices and symbols in Hollywood, the music industry, and modern society. The film begins with a warning that the film may be disturbing to some viewers, especially those under the age of 18. The film is narrated by the Christian minister Texe Marrs, who is also the author of the book of the same name. ",
+            "image": "https:\/\/i0.wp.com\/www.artofvfx.com\/wp-content\/uploads\/2022\/08\/lord_of_the_rings_the_rings_of_power_ver52_xlg.jpg?ssl=1",
+            "likes": 3,
+            "comments": 5,
+            "url": "rings-of-power",
+            "active": true
+        },
+        {
+            "id": 2,
+            "title": "Pablo Escobar Lost Paradise",
+            "description": "Pablo Escobar: Lost Paradise is a 2022 American biographical crime film directed by Andrea Di Stefano and written by Di Stefano and Rowan Joff\u00e9. The film stars Javier Bardem as Pablo Escobar, with Pen\u00e9lope Cruz, Peter Sarsgaard, Julieth Restrepo, \u00d3scar Jaenada, and Wagner Moura in supporting roles. The film is loosely based on the book Loving Pablo, Hating Escobar by Colombian journalist Virginia Vallejo, Escobar's mistress from 1983 to 1987, and on Vallejo's 2007 memoir Amando a Pablo, odiando a Escobar. ",
+            "image": "https:\/\/m.media-amazon.com\/images\/M\/MV5BNTUzMDQ0MzA4OV5BMl5BanBnXkFtZTgwNDY3OTc2MjE@._V1_FMjpg_UX1000_.jpg",
+            "likes": 3,
+            "comments": 5,
+            "url": "pablo-escobar-lost-paradise",
+            "active": true
+        },
+        {
+            "id": 3,
+            "title": "The Menu",
+            "description": "test descriptins",
+            "image": "https:\/\/avatars.mds.yandex.net\/get-kinopoisk-image\/6201401\/e46bbbf6-efd9-469e-8a39-1cb768e8b692\/300x450",
+            "url": "the-menu",
+            "likes": 3,
+            "comments": 3,
+            "active": true
+        }
+    ],
+    "categories": [
+        {
+            "id": 1,
+            "name": "Action"
+        },
+        {
+            "id": 2,
+            "name": "Comedy"
+        },
+        {
+            "id": 3,
+            "name": "Drama"
+        },
+        {
+            "id": 4,
+            "name": "Horror"
+        },
+        {
+            "id": 5,
+            "name": "Romance"
+        },
+        {
+            "id": 6,
+            "name": "Sci-Fi"
+        }
+    ]
+}
