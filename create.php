@@ -3,11 +3,11 @@ require "libs/vars.php";
 require "libs/func.php";
 
 
-$title = $description = $image = $url = $categoreies = "";
+$title = $description = $image = $url = $category = "";
 
-$title_err = $description_err = $image_err = $url_err = $categoreies_err = "";
+$title_err = $description_err = $image_err = $url_err = $category_err = "";
 
-$categoreies = getCategories();
+$categories = getCategories();
 
 
 
@@ -79,23 +79,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // validate category
 
-    $selected_category = $_POST["category"];
+    $select_category = $_POST["category"];
 
-    if ($selected_category == 0) {
+    if ($select_category == "0") {
 
-        $categoreies_err = "Please select a category.";
+        $category_err = "kategori seçmelisiniz.";
 
     } else {
-
-        $categoreies = $_POST["category"];
-
+        $category = $_POST["category"];
     }
 
 
 
-    if (empty($title_err) && empty($description_err) && empty($image_err) && empty($url_err)) {
 
-        if (createNewMovie($title, $description, $image, $url)) {
+    if (empty($title_err) && empty($description_err) && empty($image_err) && empty($url_err) && empty($category_err)) {
+
+        if (createNewMovie($title, $description, $image, $url, $category)) {
 
             $_SESSION["message"] = "$title created successfully.Will be published after approval.";
             $_SESSION["message_type"] = "success";
@@ -169,31 +168,33 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <div class="mb-3">
                         <label for="category">Category</label>
                         <select name="category" id="category"
-                            class="form-control <?php echo (!empty($categoreies_err)) ? 'is-invalid' : ''; ?>">
+                            class="form-control <?php echo (!empty($category_err)) ? 'is-invalid' : ''; ?>">
                             <option value="0">Select a category</option>
-                            <?php foreach ($categoreies as $category) : ?>
-                            <option value="<?php echo $category["id"]; ?>">
-                                <?php echo $category["name"]; ?>
-                            </option>
-                            <?php endforeach; ?>
+                           <?php foreach ($categories  as $c) {
+                                    echo "<option value='{$c["id"]}'> {$c["name"]} </option>";
+                                }?>
                         </select>
-                        <div class="invalid-feedback">
-                            <?php echo $categoreies_err; ?>
-                        </div>
-                        
+                        <span class="invalid-feedback"><?php echo $category_err; ?></span>
+                        <script type="text/javascript">
+                            document.getElementById('category').value = "<?php echo $category; ?>";
+                        </script>
+                    </div>
 
-                    </div> <br>
 
-
-                    <button type="submit" class="btn btn-primary">Send</button>
-
+                    <div class="mb-3">
+                        <input type="submit" value="Create" class="btn btn-success">
+                        <a href="admin.php" class="btn btn-secondary">Cancel</a>
+                    </div>
                 </form>
 
             </div>
         </div>
-
     </div>
 
 </div>
+
+
+
+
 
 <?php require "views/_footer.php"; ?>

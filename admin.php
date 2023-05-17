@@ -42,8 +42,29 @@ require "libs/func.php";
                                     <?php echo $movie["url"]; ?>
                                 </td>
                                 <td class="text-center">
-                                    <?php echo $movie["name"]; ?>
+
+                                    <?php 
+
+                                    $result = getCategoriesByMovieId($movie["id"]);
+
+                                    if (mysqli_num_rows($result) > 0) {
+
+                                        while ($category = mysqli_fetch_assoc($result)) {
+                                            echo "<li>" . $category["name"] . "</li>";
+                                        }
+                                        
+                                       
+                                    } else {
+                                        echo "<li>No category</li>";
+                                    }
+
+                                    echo "<ul>";
+
+                                    
+                                    ?>
+                                    
                                 <?php if ($movie["active"]): ?>
+
                                     <td class="text-center"><i class="fa-solid fa-check"></i></td>
                                 <?php else: ?>
                                     <td class="text-center"><i class="fa-solid fa-xmark"></i></td>

@@ -1,26 +1,20 @@
 <?php
 
-if (!empty($_GET['q'])) {
-  $keywords = $_GET['q'];
-
-  $movies = array_filter($movies, function ($movie) use ($keywords) {
-    return stristr($movie['title'], $keywords) || stristr($movie['description'], $keywords);
-
-  });
-
-}
 
 ?>
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="index.php">Movie</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<div class="container">
+        <a href="index.php" class="navbar-brand">BlogApp</a>
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav ml-auto">
+
+  <div class="collapse navbar-collapse">
+    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+    <li class="nav-item">
+
+<a class="nav-link" href="moviesCategory.php">Movies</a>
+
+</li>
       <?php if (isset($_COOKIE["auth"])): ?>
         <li class="nav-item">
           <a class="nav-link" href="#">Hello,
@@ -47,18 +41,20 @@ if (!empty($_GET['q'])) {
         </li>
         <li class="nav-item">
           <a class="nav-link" href="register.php">Register</a>
+          </li>
+
+          
 
         <?php endif; ?>
 
 
-      </li>
-
 
     </ul>
 
-    <form class="form-inline my-2 my-lg-0" action="index.php" method="GET">
-      <input class="form-control mr-sm-2" name="q" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form>
+    <form class="d-flex" action="index.php" method="GET">
+                <input type="text" name="q" class="form-control me-2" placeholder="Search">
+                <button class="btn btn-outline-light">Search</button>
+            </form>
+    </div>
   </div>
 </nav>
